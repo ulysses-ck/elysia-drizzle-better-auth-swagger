@@ -3,7 +3,14 @@ import { book } from "./modules/book";
 import { swagger } from "@elysiajs/swagger";
 
 const app = new Elysia()
-  .use(swagger())
+  .use(swagger({
+    documentation: {
+      info: {
+        title: "Book Backend App",
+        version: "1.0.0"
+      }
+    }
+  }))
   .use(book)
   .get("/", () => "Hello Elysia")
   .listen(3000);
