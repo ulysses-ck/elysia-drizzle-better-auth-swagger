@@ -8,6 +8,13 @@
       "when": 1754416093827,
       "tag": "0000_sudden_maximus",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1754419613562,
+      "tag": "0001_aspiring_wrecking_crew",
+      "breakpoints": true
     }
   ]
 }
