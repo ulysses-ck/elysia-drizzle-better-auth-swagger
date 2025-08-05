@@ -11,7 +11,8 @@
     "elysia": "latest"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "drizzle-kit": "^0.31.4"
   },
   "overrides": {
     "@sinclair/typebox": "0.34.33"
