@@ -6,9 +6,19 @@ import { db } from "@/db/db";
 import { eq } from "drizzle-orm";
 
 const _createBook = createInsertSchema(table.bookTable, {
-  author: t.String().examples("Edgar Allan Poe"),
-  genre: t.String().examples("Terror"),
-  title: t.String().examples("The Black Cat"),
+  author: t.String({
+    description: "Author of the book",
+    examples: "Edgar Allan Poe",
+  }),
+
+  genre: t.String({
+    description: "Genre of the book",
+    examples: "Terror",
+  }),
+  title: t.String({
+    description: "Title of the book",
+    examples: "The Black Cat",
+  }),
 });
 
 const createBook = t.Omit(_createBook, ["id"]);
@@ -43,7 +53,9 @@ export const book = new Elysia({
     },
     {
       body: createBook,
-      detail: "Create a book",
+      detail: {
+        summary: "Create a book"
+      },
     }
   )
   .get(
@@ -59,7 +71,9 @@ export const book = new Elysia({
       params: t.Object({
         id: t.String(),
       }),
-      detail: "Get specific book by id",
+      detail: {
+        summary: "Get specific book by id"
+      },
     }
   )
   .put(
@@ -78,7 +92,9 @@ export const book = new Elysia({
         id: t.String(),
       }),
       body: createBook,
-      detail: "Update specific book by id",
+      detail: {
+        summary: "Update specific book by id"
+      },
     }
   )
   .delete(
@@ -91,6 +107,8 @@ export const book = new Elysia({
       return book;
     },
     {
-      detail: `Delete specific book by id`,
+      detail: {
+        summary: "Delete specific book by id"
+      },
     }
   );
