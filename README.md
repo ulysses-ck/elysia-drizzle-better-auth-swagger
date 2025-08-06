@@ -9,10 +9,13 @@ This is a project API starter that uses:
 - `drizzle-typebox`
 
 ## Getting Started
-To get started with this template, simply paste this command into your terminal:
+To get started clone this repository, and install dependencies
 ```bash
-bun create elysia ./elysia-example
+bun install
 ```
+
+> [!NOTE]
+> It is worth mentioning that if still using drizzle and bun sql capabilities, only `pg` was used to generate auth tables(user, verification, session, account), and not anymore.  
 
 ## Scripts
 dev server
